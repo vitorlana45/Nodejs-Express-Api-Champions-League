@@ -1,0 +1,18 @@
+    anotações de aprendizados
+    ----------------------------------------------------------------
+
+    1.  sempre que usar o async terá que retornar uma promisse
+
+    2. Type 'PlayerModel | undefined' is not assignable to type 'PlayerModel'.
+    Type 'undefined' is not assignable to type 'PlayerModel'.ts(2322)
+
+        problema ->  return database.find(player => player.id === id)
+            - estava tentando retornar um player, quando eu tento retornar um player o ts me fala que eu posso ter o PLAYER ou Posso ter um UNDEFINED 
+
+        solução -> na minha Promisse eu coloco :Promise<PlayerModel | undefined>, falo que tanto posso retornar um player ou UNDEFINED 
+        quem chamar esse findPlayerById tera que tratar as duas possiveis causas
+
+    3. CROSS ORIGIN BROWSER 
+        ele é usado para restringir acesso
+            ex: em um caso onde ele não é configurado qualquer pesoa pode meio que "ROUBAR SUA API". fazer uso sem permissão 
+            e tem alguns browsers que bloquea sua API inteira caso não tenha seu CORS Definido
